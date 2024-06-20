@@ -1,0 +1,304 @@
+UnetVitSmall-224:
+  head: "Unet" 
+  backbone: "vit_small_patch16_224" #
+  input_size: [256, 256]
+  encoder_depth : 5
+  encoder_indices : [2, 4, 6, 8, 10]
+  decoder_channels : [256, 128, 64, 32, 16]
+  encoder_params:
+    scale_factors: [8, 4, 2, 1, 0.5]
+    img_size: 256
+
+UnetVitLarge-224:
+  head: "Unet" 
+  backbone: "vit_large_patch16_224" #
+  input_size: [256, 256]
+  encoder_depth : 5
+  encoder_indices : [2, 4, 6, 8, 10]
+  decoder_channels : [256, 128, 64, 32, 16]
+  encoder_params:
+    scale_factors: [8, 4, 2, 1, 0.5]
+    img_size: 256
+
+UnetVitHuge-224:
+  head: "Unet" 
+  backbone: "vit_huge_patch14_xp_224" #
+  input_size: [266, 266]
+  encoder_depth : 5
+  encoder_indices : [2, 4, 6, 8, 10]
+  decoder_channels : [256, 128, 64, 32, 16]
+  encoder_params:
+    scale_factors: [8, 4, 2, 1, 0.5]
+    img_size: 266
+
+UnetSwinTiny-224:
+    head: "Unet" 
+    backbone: "swin_tiny_patch4_window7_224" #
+    input_size: [256, 256]
+    encoder_depth : 4
+    decoder_channels : [256, 128, 64, 32]
+    head_upsampling: 2
+    encoder_params:
+        img_size: 256
+
+UnetSwinLarge-224:
+    head: "Unet" 
+    backbone: "swin_large_patch4_window7_224" #
+    input_size: [256, 256]
+    encoder_depth : 4
+    decoder_channels : [256, 128, 64, 32]
+    head_upsampling: 2
+    encoder_params:
+        img_size: 256
+
+UnetDeiT3Large-224:
+    head: "Unet" 
+    backbone: "deit3_large_patch16_224" #
+    input_size: [256, 256]
+    encoder_depth : 5
+    decoder_channels : [256, 128, 64, 32, 16]
+    head_upsampling: 1
+    encoder_params:
+        img_size: 256
+        scale_factors: [8, 4, 2, 1, 0.5]
+
+UnetDeiT3Huge-224:
+    head: "Unet" 
+    backbone: "deit3_huge_patch14_224" #
+    input_size: [266, 266]
+    encoder_depth : 5
+    decoder_channels : [256, 128, 64, 32, 16]
+    head_upsampling: 1
+    encoder_params:
+        img_size: 266
+        scale_factors: [8, 4, 2, 1, 0.5]
+
+UnetVitDinov2Large-224:
+    head: "Unet" 
+    backbone: "vit_large_patch14_dinov2" #
+    input_size: [ 256, 256 ]
+    encoder_depth: 5
+    decoder_channels: [ 256, 128, 64, 32, 16 ]
+    head_upsampling: 1
+    encoder_params:
+      img_size: 256
+      scale_factors: [ 8, 4, 2, 1, 0.5 ]
+
+#UnetDaVitHuge-224:
+#    head: "Unet" 
+#    backbone: "davit_huge" #
+#    input_size: [ 256, 256 ]
+#    encoder_depth: 4
+#    decoder_channels: [ 256, 128, 64, 32 ]
+#    head_upsampling: 2
+#    encoder_params:
+#      img_size: 256
+
+# FPN ############################################################################
+
+FPNResNet50-224:
+  head: "FPN" 
+  backbone: "resnet50" #
+  input_size: [256, 256]
+  encoder_depth : 5
+  decoder_pyramid_channels: 512
+  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+  upsampling: 4
+  encoder_params:
+    act_layer: "prelu"
+
+FPNMobileNetv3-224:
+  head: "FPN" 
+  backbone: "mobilenetv3_large_100" #
+  input_size: [256, 256]
+  encoder_depth : 5
+  decoder_pyramid_channels: 512
+  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+  upsampling: 4
+  encoder_params:
+    act_layer: "prelu"
+
+FPNVitSmall-224:
+  head: "FPN" 
+  backbone: "vit_small_patch16_224" #
+  input_size: [256, 256]
+  encoder_depth : 5
+  encoder_indices : [2, 4, 6, 8, 10]
+  decoder_pyramid_channels: 512
+  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+  upsampling: 4
+  encoder_params:
+    scale_factors: [8, 4, 2, 1, 0.5]
+    img_size: 256
+
+FPNVitLarge-224:
+  head: "FPN" 
+  backbone: "vit_large_patch16_224" #
+  input_size: [256, 256]
+  encoder_depth : 5
+  encoder_indices : [2, 4, 6, 8, 10]
+  decoder_pyramid_channels: 512
+  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+  upsampling: 4
+  encoder_params:
+    scale_factors: [8, 4, 2, 1, 0.5]
+    img_size: 256
+
+FPNVitHuge-224:
+  head: "FPN" 
+  backbone: "vit_huge_patch14_224" #
+  input_size: [256, 256]
+  encoder_depth : 5
+  encoder_indices : [2, 4, 6, 8, 10]
+  decoder_pyramid_channels: 512
+  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+  upsampling: 4
+  encoder_params:
+    scale_factors: [8, 4, 2, 1, 0.5]
+    img_size: 256
+
+#FPNMaxVit2Base-224:
+#  head: "FPN" 
+#  backbone: "maxxvitv2_rmlp_base_rw_224" #
+#  input_size: [256, 256]
+#  encoder_depth : 5
+#  decoder_pyramid_channels: 512
+#  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+#  upsampling: 4
+#  encoder_params:
+#    img_size: 256
+
+#FPNMaxVitBase-224:
+#  head: "FPN"
+#  backbone: "maxvit_base_tf_224" #
+#  input_size: [256, 256]
+#  encoder_depth : 5
+#  decoder_pyramid_channels: 512
+#  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+#  upsampling: 4
+#  encoder_params:
+#    img_size: 256
+
+FPNMitB1-224:
+  head: "FPN" 
+  backbone: "mit_b1" #
+  input_size: [256, 256]
+  encoder_depth : 5
+  encoder_indices : [2, 4, 6, 8, 10]
+  decoder_pyramid_channels: 512
+  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+  upsampling: 4
+  encoder_params:
+    scale_factors: [8, 4, 2, 1, 0.5]
+    img_size: 256
+
+FPNMitB5-224:
+  head: "FPN" 
+  backbone: "mit_b5" #
+  input_size: [256, 256]
+  encoder_depth : 5
+  encoder_indices : [2, 4, 6, 8, 10]
+  decoder_pyramid_channels: 512
+  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+  upsampling: 4
+  encoder_params:
+    scale_factors: [8, 4, 2, 1, 0.5]
+    img_size: 256
+
+#FPNVitSmallR50-224:
+#  head: "FPN" 
+#  backbone: "vit_small_resnet50d_s16_224" #
+#  input_size: [256, 256]
+#  encoder_depth : 5
+#  encoder_indices : [2, 4, 6, 8, 10]
+#  decoder_pyramid_channels: 512
+#  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+#  upsampling: 4
+#  encoder_params:
+#    scale_factors: [8, 4, 2, 1, 0.5]
+#    img_size: 256
+
+FPNVitBase-224:
+  head: "FPN" 
+  backbone: "vit_base_patch16_224" #
+  input_size: [256, 256]
+  encoder_depth : 5
+  encoder_indices : [2, 4, 6, 8, 10]
+  decoder_pyramid_channels: 512
+  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+  upsampling: 4
+  encoder_params:
+    scale_factors: [8, 4, 2, 1, 0.5]
+    img_size: 256
+
+FPNVitHuge-224:
+  head: "FPN" 
+  backbone: "vit_huge_patch16_gap_448" #
+  input_size: [256, 256]
+  encoder_depth : 5
+  encoder_indices : [2, 4, 6, 8, 10]
+  decoder_pyramid_channels: 512
+  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+  upsampling: 4
+  encoder_params:
+    scale_factors: [8, 4, 2, 1, 0.5]
+    img_size: 256
+
+FPNSwinLarge-224:
+  head: "FPN" 
+  backbone: "swin_large_patch4_window7_224" #
+  input_size: [ 256, 256 ]
+  encoder_depth: 4
+  decoder_pyramid_channels: 512
+  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+  upsampling: 4
+  encoder_params:
+    img_size: 256
+
+FPNSwin2Large-224:
+  head: "FPN" 
+  backbone: "swinv2_cr_large_224" #
+  input_size: [ 256, 256 ]
+  encoder_depth: 4
+  decoder_pyramid_channels: 512
+  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+  upsampling: 4
+  encoder_params:
+    img_size: 256
+
+FPNSwin2Base-224:
+  head: "FPN" 
+  backbone: "swinv2_base_window8_256" #
+  input_size: [ 256, 256 ]
+  encoder_depth: 4
+  decoder_pyramid_channels: 512
+  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+  upsampling: 4
+  encoder_params:
+    img_size: 256
+
+FPNSwin2Small-224:
+  head: "FPN" 
+  backbone: "swinv2_small_window16_256" #
+  input_size: [ 256, 256 ]
+  encoder_depth: 4
+  decoder_pyramid_channels: 512
+  decoder_segmentation_channels: 256 #outpur features = encoder depth * decoder_segmentation_channels
+  upsampling: 4
+  encoder_params:
+    img_size: 256
+
+
+
+# DeepLabV3Plus tp be fixed... #################################################################
+#
+#DeepLabSwinLarge-224:
+#    head: "DeepLabV3Plus" 
+#    backbone: "swin_large_patch4_window7_224" #
+#    input_size: [256, 256]
+#    encoder_depth: 4
+#    encoder_output_stride: 32
+#    decoder_channels: 256
+#    upsampling: 16
+#    encoder_params:
+#      img_size: 256

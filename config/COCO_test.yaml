@@ -1,0 +1,30 @@
+model_list:
+    - "/mnt/train_output/COCO/checkpoints/COCO_FPNResNet50-224_best_model.pth"
+    - "/mnt/train_output/ILSVRC2017-COCO/checkpoints/ILSVRC2017-COCO_FPNResNet50-224_best_model.pth"
+    - "/mnt/train_output/COCO/checkpoints/COCO_FPNSwinLarge-224_best_model.pth"
+    - "/mnt/train_output/ILSVRC2017-COCO/checkpoints/ILSVRC2017-COCO_FPNSwinLarge-224_best_model.pth"
+    - "/mnt/train_output/COCO/checkpoints/COCO_FPNVitBase-224_best_model.pth"
+    - "/mnt/train_output/ILSVRC2017-COCO/checkpoints/ILSVRC2017-COCO_FPNVitBase-224_best_model.pth"
+    - "/mnt/train_output/COCO/checkpoints/COCO_FPNVitSmall-224_best_model.pth"
+    - "/mnt/train_output/ILSVRC2017-COCO/checkpoints/ILSVRC2017-COCO_FPNVitSmall-224_best_model.pth"
+    - "/mnt/train_output/COCO/checkpoints/COCO_FPNMitB1-224_best_model.pth"
+    - "/mnt/train_output/ILSVRC2017-COCO/checkpoints/ILSVRC2017-COCO_FPNMitB1-224_best_model.pth"
+    - "/mnt/train_output/COCO/checkpoints/COCO_FPNMitB5-224_best_model.pth"
+    - "/mnt/train_output/ILSVRC2017-COCO/checkpoints/ILSVRC2017-COCO_FPNMitB5-224_best_model.pth"
+    - "/mnt/train_output/COCO/checkpoints/COCO_FPNMitB5-224_best_model.pth"
+    - "/mnt/train_output/ILSVRC2017-COCO/checkpoints/ILSVRC2017-COCO_FPNMitB5-224_best_model.pth"
+    - "/mnt/train_output/COCO/checkpoints/COCO_FPNSwin2Small-224_best_model.pth"
+    - "/mnt/train_output/ILSVRC2017-COCO/checkpoints/ILSVRC2017-COCO_FPNSwin2Small-224_best_model.pth"
+    - "/mnt/train_output/COCO/checkpoints/COCO_FPNVitHuge-224_best_model.pth"
+    - "/mnt/train_output/ILSVRC2017-COCO/checkpoints/ILSVRC2017-COCO_FPNVitHuge-224_best_model.pth"
+
+
+
+
+
+dataset_id : "COCO"
+base_path: "/mnt/datasets/COCO"
+test_data_list: "/mnt/datasets/COCO/lists/val_data_list.txt"
+batch_size: 32
+num_classes: 81
+output_folder: "/mnt/test_output"

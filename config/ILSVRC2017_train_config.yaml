@@ -1,0 +1,26 @@
+dataset_id : "ILSVRC2017"
+file_list_path: "/mnt/datasets/ILSVRC/Pseudo_Masks/lists/train.txt"
+output_folder: "/mnt/train_output"
+base_path: "/mnt/datasets"
+num_classes: 201 #with background
+checkpoints:  # absolute path to checkpoint
+num_classes_checkpoint: 201 #classes used for training the checkpoint
+
+batch_size: 32
+lr : 0.001
+weight_decay: 0.005
+epochs: 200
+workers: 4
+num_checkpoints: 3
+
+scheduler:
+  name: "cosine"
+  warmup_epochs: 5
+  base_lr: 1.25e-3 # 4096 batch-size
+  warmup_lr: 1.25e-6
+  min_lr: 1.25e-5
+
+model:
+  id: "FPNSwin2Small-224"
+  freeze_decoder: False
+  freeze_encoder: False

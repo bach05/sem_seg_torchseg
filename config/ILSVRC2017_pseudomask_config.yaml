@@ -1,0 +1,8 @@
+sam_checkpoint: sam_models/sam_vit_h_4b8939.pth
+model_type: vit_h
+
+base_path: /media/data/Datasets/ILSVRC
+category_labels_file: category_labels.yaml
+list_file: val.txt
+batch_size: 5
+output_folder: Pseudo_Masks
