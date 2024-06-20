@@ -47,6 +47,16 @@ model:
 In particular, `the model id` specifies the model to be used. You can find available models and settings in the `models.yaml` file. Models are taken from `torchseg` library, see [here](https://github.com/isaaccorley/torchseg/tree/main).
 The `freeze_decoder` and `freeze_encoder` parameters specify whether to freeze the encoder and decoder parts of the model, respectively.
 
+Example of file_list (syntax is `image_path annotation_path`) in train_data_list.txt file: 
+```txt  
+rain2014/COCO_train2014_000000494112.jpg train/COCO_train2014_000000494112.png
+train2014/COCO_train2014_000000507224.jpg train/COCO_train2014_000000507224.png
+train2014/COCO_train2014_000000400190.jpg train/COCO_train2014_000000400190.png
+train2014/COCO_train2014_000000013944.jpg train/COCO_train2014_000000013944.png
+train2014/COCO_train2014_000000115973.jpg train/COCO_train2014_000000115973.png
+train2014/COCO_train2014_000000308825.jpg train/COCO_train2014_000000308825.png
+train2014/COCO_train2014_000000213963.jpg train/COCO_train2014_000000213963.png
+```
 **TO DO:** Add support to [MM Segmentation](https://github.com/open-mmlab/mmsegmentation). 
 **TO DO:** Add support to [HF Transformers](https://huggingface.co/docs/transformers/index). 
 
